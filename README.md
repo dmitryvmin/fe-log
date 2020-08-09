@@ -5,7 +5,7 @@ Logging utility for client side development.
 ## Installation
 
 ```bash
-npm install fe-log
+npm install @dmitrymin/fe-log
 ```
 
 ## Usage
