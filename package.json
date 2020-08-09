@@ -1,14 +1,14 @@
 {
   "name": "@dmitrymin/fe-log",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Front-end logging utility",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build" : "tsc",
+    "build": "tsc",
     "test": "jest --config jestconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
