@@ -1,14 +1,11 @@
-export type LoggerLogLevel =
-  | "debug"
-  | "error"
-  | "info"
-  | "log"
-  | "trace"
-  | "warn"
-  ;
+import {LogLevel} from "./constants";
+import {ValueOf} from "./utils/getTSValueOf";
+
+export type LogLevelKeys = keyof typeof LogLevel;
+export type LogLevelValues = ValueOf<typeof LogLevel>;
 
 type LoggerConfig = {
-  logLevel: LoggerLogLevel;
+  logLevel: LogLevelValues;
   logLabel: string;
 };
 

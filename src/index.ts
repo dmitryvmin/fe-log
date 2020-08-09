@@ -1,25 +1,27 @@
-import {LoggerArgs} from "./types";
+import {LoggerArgs, LogLevelValues,} from "./types";
+import {getConsoleValueOf} from "./utils/getConsoleValueOf";
 
 /**
- * log utility
+ * main fe-log utility script
  *
  * @param config - if the first argument is a [LoggerConfig] object, log treats it as the config
  * @param args
  * @return void
+ *
  */
-const log = (config: LoggerArgs, ...args): void => {
+const log = (config: LoggerArgs, ...args: any[]): void => {
 
-  // if (process.env.FELOGGER_STATUS === "OFF") {
+  // TODO: add env variable support
+  // if (process.env.FELOG_STATUS === "OFF") {
   //   return;
   // }
 
-  const DEFAULT_LOG_LEVEL = "log";
   const LOG_STYLES = "color: green; font-size: 14px";
   const LOG_PREFIX = "==========";
 
   // Group the log call and mark it with a timestamp
   let logGroupLabel = `${LOG_PREFIX} ${Date.now()}`;
-  let logLevel = process.env.REACT_APP_LOGGER_LOG_LEVEL;
+  let logLevel: LogLevelValues = "log"; // TODO: ?? process.env.FELOG_LEVEL
   // Was the first argument a log configuration object?
   let logConfig = false;
 
@@ -76,14 +78,15 @@ const log = (config: LoggerArgs, ...args): void => {
   // Print logs
   // If first argument wasn't a config object, print it
   if (!logConfig) {
-    console[logLevel ?? DEFAULT_LOG_LEVEL](config);
+    getConsoleValueOf(logLevel)(config);
   }
   // If args 2+ were provided, print them
   if (args) {
     args.map((l) => {
       // If a logLevel wasn't provided, default to the DEFAULT_LOG_LEVEL
+      // TODO: add log styling
       // console[logLevel ?? DEFAULT_LOG_LEVEL](`%c${a}`, LOG_STYLES);
-      console[logLevel ?? DEFAULT_LOG_LEVEL](l);
+      getConsoleValueOf(logLevel)(l);
     });
   }
 
