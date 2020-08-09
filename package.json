@@ -1,0 +1,23 @@
+{
+  "name": "fe-log",
+  "version": "1.0.0",
+  "description": "Front-end logging utility",
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc",
+    "test": "jest --config jestconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitryvmin/fe-log.git"
+  },
+  "author": "Dmitry Minyaylov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitryvmin/fe-log/issues"
+  },
+  "homepage": "https://github.com/dmitryvmin/fe-log#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
