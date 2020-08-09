@@ -1,3 +1,6 @@
+/**
+ * Console log level enum
+ */
 export const LogLevel = {
   DEBUG: "debug",
   ERROR: "error",
