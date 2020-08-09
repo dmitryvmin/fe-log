@@ -1,5 +1,5 @@
 {
-  "name": "fe-log",
+  "name": "@dmitrymin/fe-log",
   "version": "1.0.0",
   "description": "Front-end logging utility",
   "main": "lib/index.js",
